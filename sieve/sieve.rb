@@ -11,12 +11,9 @@ class Sieve
     end
 
     def primes
-        i = 0
         array = [*START..end_range]
-        while i < array.length
-            array.delete_if { |y| y % array[i] == 0 && array[i] != y }
-            i += 1
+        array.each do |num|
+            array.delete_if { |x| x % num == 0 && num != x }
         end
-        array
     end
 end
