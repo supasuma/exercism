@@ -4,7 +4,7 @@ end
 
 class Pangram
     def self.pangram?(phrase)
-        array = [*'a'..'z'] - phrase.gsub(/\s+/, '').downcase.split('')
-        array.empty? ? true : false
+        modified_phrase = [*'a'..'z'] - phrase.downcase.split('')
+        modified_phrase.empty?
     end
 end
