@@ -3,17 +3,18 @@ module BookKeeping
 end
 
 class Squares
-    attr_reader :natural_number
-    def initialize(number)
-        @natural_number = number
+    attr_reader :square_range
+
+    def initialize(n)
+        @square_range = (1..n)
     end
 
     def square_of_sum
-        [*1..natural_number].inject(0, :+)**2
+        square_range.inject(0, :+)**2
     end
 
     def sum_of_squares
-        [*1..natural_number].inject(0) do |squares, number|
+        square_range.inject(0) do |squares, number|
             squares += number**2
         end
     end
